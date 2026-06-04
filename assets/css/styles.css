@@ -114,6 +114,28 @@ ul { list-style: none; padding: 0; }
 
 .section--tight { padding-block: clamp(56px, 7vw, 96px); }
 
+/* Photographic scene background (people-free corridor), with a soft paper
+   scrim so the heading and white cards stay readable (WCAG AA+). */
+.section--scene {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--paper, #f4f5fa);
+}
+.section--scene::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(180deg,
+      rgba(244, 245, 250, 0.93) 0%,
+      rgba(244, 245, 250, 0.80) 48%,
+      rgba(244, 245, 250, 0.90) 100%),
+    url("../img/why-choose-bg.jpg");
+  background-size: cover;
+  background-position: center 40%;
+}
+
 .section-head {
   max-width: 720px;
   margin-bottom: clamp(36px, 5vw, 64px);
