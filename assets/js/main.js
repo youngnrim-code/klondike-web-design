@@ -9,10 +9,10 @@
   const MARK = `
     <svg class="brand__mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
       <rect width="40" height="40" rx="11" fill="url(#kg)"/>
-      <path d="M13 9h4.4v9.1L25.6 9h5.3l-8.6 9.4L31.4 31h-5.4l-6.3-9-2.3 2.5V31H13V9Z" fill="#0b0e14"/>
+      <path d="M13 9h4.4v9.1L25.6 9h5.3l-8.6 9.4L31.4 31h-5.4l-6.3-9-2.3 2.5V31H13V9Z" fill="#fff"/>
       <defs>
         <linearGradient id="kg" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#f5c451"/><stop offset="1" stop-color="#c8902a"/>
+          <stop stop-color="#2a347e"/><stop offset="1" stop-color="#161a47"/>
         </linearGradient>
       </defs>
     </svg>`;
@@ -97,6 +97,7 @@
         <div class="footer__top">
           <div class="footer__brand">
             <a class="brand" href="index.html">${MARK}<span class="brand__name">KLONDIKE<span>.</span></span></a>
+            <div class="brand__tagline">Earnest Payment</div>
             <p>Official distributor of Beaver Store Lab — the complete store hardware &amp; software lineup, supplied, installed and supported nationwide.</p>
             <div class="footer__social">
               <a href="#" aria-label="Instagram">${ICON.instagram}</a>

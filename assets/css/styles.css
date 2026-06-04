@@ -5,29 +5,34 @@
 
 /* ---------- Design Tokens ---------- */
 :root {
-  /* Palette — premium gold on deep ink */
-  --ink-900: #0b0e14;
-  --ink-800: #11151d;
-  --ink-700: #1a1f2b;
-  --ink-600: #252b38;
-  --ink-500: #3a4252;
+  /* Palette — KLONDIKE navy ("Earnest Payment") */
+  --ink-900: #0b1026;
+  --ink-800: #111738;
+  --ink-700: #1a2248;
+  --ink-600: #27305c;
+  --ink-500: #3b4878;
   --line: rgba(255, 255, 255, 0.08);
   --line-strong: rgba(255, 255, 255, 0.16);
 
-  --paper: #f6f3ec;
-  --paper-2: #efeadf;
-  --cream: #fbfaf6;
+  --paper: #f4f5fa;
+  --paper-2: #e9ebf4;
+  --cream: #fbfbfe;
 
-  --gold: #e8b33d;
-  --gold-2: #f5c451;
-  --gold-deep: #c8902a;
-  --gold-soft: rgba(232, 179, 61, 0.12);
+  /* Brand accent — royal blue drawn from the navy mark */
+  --gold: #3a57d6;
+  --gold-2: #5d78f0;
+  --gold-deep: #222c73;
+  --gold-soft: rgba(58, 87, 214, 0.12);
 
-  --text-strong: #f5f3ee;
-  --text: #c9cdd6;
-  --text-muted: #8b91a0;
-  --text-dark: #14181f;
-  --text-dark-muted: #5a6170;
+  /* Navy brand mark color */
+  --navy: #161a47;
+  --navy-2: #2a347e;
+
+  --text-strong: #f3f5fb;
+  --text: #c5cbdc;
+  --text-muted: #888fa6;
+  --text-dark: #131830;
+  --text-dark-muted: #555d7a;
 
   /* Type */
   --font-sans: "Inter", "Pretendard", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -43,7 +48,7 @@
 
   --shadow-sm: 0 2px 10px rgba(8, 10, 16, 0.06);
   --shadow: 0 18px 50px rgba(8, 10, 16, 0.12);
-  --shadow-gold: 0 14px 40px rgba(232, 179, 61, 0.28);
+  --shadow-gold: 0 14px 40px rgba(42, 60, 150, 0.32);
 
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -180,11 +185,11 @@ h1, h2, h3, h4 {
 .btn:active { transform: translateY(0); }
 
 .btn--gold {
-  background: linear-gradient(135deg, var(--gold-2), var(--gold-deep));
-  color: var(--ink-900);
+  background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+  color: #fff;
   box-shadow: var(--shadow-gold);
 }
-.btn--gold:hover { box-shadow: 0 18px 48px rgba(232, 179, 61, 0.42); }
+.btn--gold:hover { box-shadow: 0 18px 48px rgba(42, 60, 150, 0.46); }
 
 .btn--ghost {
   background: transparent;
@@ -220,7 +225,7 @@ h1, h2, h3, h4 {
 }
 
 .site-header.is-scrolled {
-  background: rgba(11, 14, 20, 0.82);
+  background: rgba(11, 16, 38, 0.82);
   backdrop-filter: saturate(160%) blur(14px);
   -webkit-backdrop-filter: saturate(160%) blur(14px);
   border-bottom-color: var(--line);
@@ -332,8 +337,8 @@ body.menu-open .nav__toggle span::after { transform: translateX(-50%) translateY
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(60% 50% at 100% 0%, rgba(232, 179, 61, 0.16), transparent 60%),
-    radial-gradient(40% 40% at 0% 100%, rgba(232, 179, 61, 0.08), transparent 60%);
+    radial-gradient(60% 50% at 100% 0%, rgba(93, 120, 240, 0.16), transparent 60%),
+    radial-gradient(40% 40% at 0% 100%, rgba(93, 120, 240, 0.08), transparent 60%);
   pointer-events: none;
 }
 
@@ -473,7 +478,7 @@ body.menu-open .nav__toggle span::after { transform: translateX(-50%) translateY
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--line);
 }
-.screen__cell:nth-child(2) { background: var(--gold-soft); border-color: rgba(232,179,61,0.3); }
+.screen__cell:nth-child(2) { background: var(--gold-soft); border-color: rgba(93,120,240,0.3); }
 .screen__line { height: 7px; border-radius: 5px; background: rgba(255,255,255,0.08); }
 .screen__line.w-60 { width: 60%; }
 .screen__line.w-80 { width: 80%; }
@@ -533,7 +538,7 @@ body.menu-open .nav__toggle span::after { transform: translateX(-50%) translateY
 .card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow);
-  border-color: rgba(232, 179, 61, 0.5);
+  border-color: rgba(93, 120, 240, 0.5);
 }
 
 .card__icon {
@@ -608,7 +613,7 @@ body.menu-open .nav__toggle span::after { transform: translateX(-50%) translateY
   position: absolute;
   inset: auto -30% -30% auto;
   width: 60%; height: 60%;
-  background: radial-gradient(circle, rgba(232,179,61,0.18), transparent 70%);
+  background: radial-gradient(circle, rgba(93,120,240,0.18), transparent 70%);
 }
 
 .value-list { display: grid; gap: 14px; margin-top: 28px; }
@@ -742,9 +747,9 @@ body.menu-open .nav__toggle span::after { transform: translateX(-50%) translateY
   background-image: radial-gradient(40% 60% at 100% 0%, rgba(255,255,255,0.3), transparent 60%);
 }
 .cta__inner { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
-.cta h2 { color: var(--ink-900); font-size: clamp(1.8rem, 3.4vw, 2.6rem); max-width: 16ch; }
-.cta p { color: rgba(11,14,20,0.78); margin-top: 12px; max-width: 44ch; }
-.cta .btn--gold { background: var(--ink-900); color: var(--gold-2); box-shadow: 0 14px 34px rgba(0,0,0,0.28); }
+.cta h2 { color: #fff; font-size: clamp(1.8rem, 3.4vw, 2.6rem); max-width: 16ch; }
+.cta p { color: rgba(255,255,255,0.86); margin-top: 12px; max-width: 44ch; }
+.cta .btn--gold { background: #fff; color: var(--gold-deep); box-shadow: 0 14px 34px rgba(0,0,0,0.28); }
 .cta .btn--gold:hover { box-shadow: 0 18px 44px rgba(0,0,0,0.36); }
 
 /* ---------- Page hero (interior) ---------- */
@@ -806,7 +811,7 @@ body.menu-open .nav__toggle span::after { transform: translateX(-50%) translateY
   padding: 16px 20px;
   border-radius: 12px;
   background: var(--gold-soft);
-  border: 1px solid rgba(232,179,61,0.4);
+  border: 1px solid rgba(93,120,240,0.4);
   color: var(--gold-deep);
   font-weight: 600;
 }
@@ -917,7 +922,7 @@ body.menu-open .nav__toggle span::after { transform: translateX(-50%) translateY
   position: fixed;
   inset: 76px 0 0 0;
   z-index: 99;
-  background: rgba(11, 14, 20, 0.98);
+  background: rgba(11, 16, 38, 0.98);
   backdrop-filter: blur(10px);
   padding: 28px var(--gutter) 40px;
   transform: translateY(-12px);
@@ -939,6 +944,17 @@ body.menu-open .mobile-nav { opacity: 1; visibility: visible; transform: transla
 }
 .mobile-nav a .tag { font-family: var(--font-sans); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 4px; }
 .mobile-nav .btn { margin-top: 28px; }
+
+/* ---------- Brand tagline ---------- */
+.brand__tagline {
+  margin-top: 8px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--gold-2);
+}
 
 /* ---------- Co-brand / partner badge ---------- */
 .partner-badge {
