@@ -126,8 +126,7 @@
           <div class="footer__col">
             <h5>Support</h5>
             <ul>
-              <li><a href="tel:1600-8235">1600-8235</a></li>
-              <li><a href="mailto:support@klondikeinc.com">support@klondikeinc.com</a></li>
+              <li><a href="mailto:support@klondike.co.kr">support@klondike.co.kr</a></li>
               <li><a href="contact.html">Request a Demo</a></li>
               <li><a href="#">Partner Login</a></li>
             </ul>
@@ -135,8 +134,8 @@
         </div>
         <div class="footer__bottom">
           <div class="footer__legal">
-            <span><b>KLONDIKE INC</b> &nbsp;·&nbsp; CEO: Klondike Leadership &nbsp;·&nbsp; Reg. No. 471-87-00751</span>
-            <span>12 Dosan-daero 6-gil, Gangnam-gu, Seoul, Republic of Korea &nbsp;·&nbsp; support@klondikeinc.com</span>
+            <span><b>KLONDIKE INC</b> &nbsp;·&nbsp; CEO: Helen Kim &nbsp;·&nbsp; Reg. No. 642-86-02107</span>
+            <span>28-4 Teheran-ro 1-gil, Gangnam-gu, Seoul, Republic of Korea &nbsp;·&nbsp; support@klondike.co.kr</span>
             <span>© ${new Date().getFullYear()} KLONDIKE INC. All rights reserved.</span>
           </div>
           <a class="btn btn--outline-light" href="#top">Back to top ↑</a>
