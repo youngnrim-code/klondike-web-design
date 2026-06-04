@@ -91,10 +91,7 @@
             <div class="brand__tagline">Earnest Payment</div>
             <p>비버 매장연구소 공식 총판 — 키오스크부터 결제·운영까지, 매장에 필요한 하드웨어와 소프트웨어를 전국 어디서나 공급·설치·지원합니다.</p>
             <div class="footer__social">
-              <a href="#" aria-label="Instagram">${ICON.instagram}</a>
-              <a href="#" aria-label="YouTube">${ICON.youtube}</a>
-              <a href="#" aria-label="Blog">${ICON.blog}</a>
-              <a href="#" aria-label="Chat">${ICON.chat}</a>
+              <a href="https://youtu.be/dsZYxFDcBro?si=aCYKTQJfxp9Uq5XQ" target="_blank" rel="noopener" aria-label="YouTube">${ICON.youtube}</a>
             </div>
           </div>
           <div class="footer__col">
@@ -120,7 +117,6 @@
             <ul>
               <li><a href="mailto:support@klondike.co.kr">support@klondike.co.kr</a></li>
               <li><a href="contact.html">무료 상담 신청</a></li>
-              <li><a href="#">파트너 로그인</a></li>
             </ul>
           </div>
         </div>

@@ -1062,6 +1062,21 @@ body.menu-open .mobile-nav { opacity: 1; visibility: visible; transform: transla
   display: block;
 }
 
+/* Branch network cards */
+.branch { display: flex; gap: 16px; align-items: flex-start; }
+.branch__num {
+  flex: none;
+  width: 40px; height: 40px;
+  border-radius: 11px;
+  background: linear-gradient(135deg, var(--gold-2), var(--gold-deep));
+  color: #fff;
+  display: grid; place-items: center;
+  font-family: var(--font-brand);
+  font-weight: 700; font-size: 0.95rem;
+}
+.branch h3 { font-size: 1.05rem; margin-bottom: 4px; }
+.branch p { color: var(--text-dark-muted); font-size: 0.92rem; }
+
 .card--product { display: flex; flex-direction: column; }
 .card--product p { flex: 1; }
 .card__model {
