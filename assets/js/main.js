@@ -10,10 +10,10 @@
 
   /* ---- Navigation model ---- */
   const NAV = [
-    { tag: "제품", label: "솔루션", href: "solutions.html" },
-    { tag: "강점", label: "선택 이유", href: "why.html" },
-    { tag: "사례", label: "도입 사례", href: "where.html" },
-    { tag: "회사", label: "회사 소개", href: "company.html" }
+    { tag: "What", label: "Solutions", href: "solutions.html" },
+    { tag: "Why", label: "Why Klondike", href: "why.html" },
+    { tag: "Where", label: "Case Studies", href: "where.html" },
+    { tag: "Company", label: "Company", href: "company.html" }
   ];
 
   const ICON = {
