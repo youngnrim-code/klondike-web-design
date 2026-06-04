@@ -97,7 +97,7 @@
         <div class="footer__top">
           <div class="footer__brand">
             <a class="brand" href="index.html">${MARK}<span class="brand__name">KLONDIKE<span>.</span></span></a>
-            <p>Every solution for the smart store — kiosks, ordering, payments, and operations, unified on one platform and backed by 24/7 support.</p>
+            <p>Official distributor of Beaver Store Lab — the complete store hardware &amp; software lineup, supplied, installed and supported nationwide.</p>
             <div class="footer__social">
               <a href="#" aria-label="Instagram">${ICON.instagram}</a>
               <a href="#" aria-label="YouTube">${ICON.youtube}</a>
@@ -108,10 +108,10 @@
           <div class="footer__col">
             <h5>Solutions</h5>
             <ul>
-              <li><a href="solutions.html">Kiosk &amp; Barrier-Free</a></li>
+              <li><a href="solutions.html">Kiosks &amp; Barrier-Free</a></li>
+              <li><a href="solutions.html">POS &amp; Kitchen (KDS)</a></li>
               <li><a href="solutions.html">Table &amp; QR Order</a></li>
-              <li><a href="solutions.html">POS &amp; Payments</a></li>
-              <li><a href="solutions.html">KDS &amp; Operations</a></li>
+              <li><a href="solutions.html">BeaverPay &amp; IoT Access</a></li>
             </ul>
           </div>
           <div class="footer__col">
@@ -136,6 +136,7 @@
           <div class="footer__legal">
             <span><b>KLONDIKE INC</b> &nbsp;·&nbsp; CEO: Helen Kim &nbsp;·&nbsp; Reg. No. 642-86-02107</span>
             <span>28-4 Teheran-ro 1-gil, Gangnam-gu, Seoul, Republic of Korea &nbsp;·&nbsp; support@klondike.co.kr</span>
+            <span>Official distributor of Beaver Store Lab (㈜비버웍스). Product names &amp; specifications are property of the manufacturer.</span>
             <span>© ${new Date().getFullYear()} KLONDIKE INC. All rights reserved.</span>
           </div>
           <a class="btn btn--outline-light" href="#top">Back to top ↑</a>

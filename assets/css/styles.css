@@ -940,6 +940,82 @@ body.menu-open .mobile-nav { opacity: 1; visibility: visible; transform: transla
 .mobile-nav a .tag { font-family: var(--font-sans); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 4px; }
 .mobile-nav .btn { margin-top: 28px; }
 
+/* ---------- Co-brand / partner badge ---------- */
+.partner-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 16px 7px 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 0.82rem;
+  color: var(--text);
+}
+.partner-badge b { color: var(--gold-2); font-weight: 600; }
+.partner-badge .x { color: var(--text-muted); font-weight: 400; }
+
+.partner-bar {
+  background: var(--ink-800);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  color: var(--text-muted);
+  padding-block: 18px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+.partner-bar b { color: var(--text-strong); font-weight: 600; }
+.partner-bar .gold { color: var(--gold-2); }
+
+/* ---------- Product card extras ---------- */
+.media-ph {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 14px;
+  border: 1px dashed rgba(20, 24, 31, 0.22);
+  background:
+    repeating-linear-gradient(45deg, rgba(20,24,31,0.022) 0 10px, transparent 10px 20px),
+    var(--paper-2);
+  display: grid;
+  place-items: center;
+  gap: 8px;
+  color: var(--text-dark-muted);
+  margin-bottom: 20px;
+  overflow: hidden;
+  text-align: center;
+}
+.media-ph svg { width: 30px; height: 30px; opacity: 0.5; }
+.media-ph span {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.card--product { display: flex; flex-direction: column; }
+.card--product p { flex: 1; }
+.card__model {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  color: var(--gold-deep);
+  text-transform: uppercase;
+}
+.card--product h3 { margin: 4px 0 8px; }
+
+.price {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(20, 24, 31, 0.08);
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.price__now { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; color: var(--text-dark); }
+.price__mo { font-size: 0.85rem; font-weight: 600; color: var(--gold-deep); }
+.price__note { width: 100%; font-size: 0.74rem; color: var(--text-dark-muted); }
+.price--quote .price__now { font-size: 1.05rem; color: var(--gold-deep); }
+
 /* ---------- Reveal animation ---------- */
 [data-reveal] {
   opacity: 0;
