@@ -170,17 +170,47 @@
     });
   }
 
-  /* ---- Demo form ---- */
+  /* ---- Consultation form (emails the team via form endpoint) ---- */
   function initForms() {
-    document.querySelectorAll("form[data-demo]").forEach((form) => {
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const ok = form.querySelector(".form__success");
+    document.querySelectorAll("form[data-demo], form[data-endpoint]").forEach((form) => {
+      const ok = form.querySelector(".form__success");
+      const btn = form.querySelector('button[type="submit"]');
+      const endpoint = form.getAttribute("data-endpoint");
+
+      const showSuccess = () => {
         if (ok) ok.classList.add("show");
         form.querySelectorAll("input, textarea, select").forEach((f) => {
-          if (f.type !== "submit") f.value = "";
+          if (f.type !== "submit" && f.type !== "hidden") f.value = "";
         });
         if (ok) ok.scrollIntoView({ behavior: "smooth", block: "center" });
+      };
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+
+        if (!endpoint) { showSuccess(); return; } // demo fallback
+
+        const data = {};
+        form.querySelectorAll("input, textarea, select").forEach((f) => {
+          if (f.name) data[f.name] = f.value;
+        });
+
+        const label = btn ? btn.innerHTML : "";
+        if (btn) { btn.disabled = true; btn.textContent = "전송 중…"; }
+        try {
+          const res = await fetch(endpoint, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Accept: "application/json" },
+            body: JSON.stringify(data)
+          });
+          if (!res.ok) throw new Error("Request failed: " + res.status);
+          showSuccess();
+        } catch (err) {
+          alert("전송에 실패했습니다. 잠시 후 다시 시도하시거나 support@klondike.co.kr 로 연락해 주세요.");
+        } finally {
+          if (btn) { btn.disabled = false; btn.innerHTML = label; }
+        }
       });
     });
   }
