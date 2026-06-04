@@ -154,8 +154,8 @@
         .split("|")
         .map((line) => {
           const inner = escapeHtml(line.trim())
-            .replace(/\*([^*]+)\*/g, "<em>$1</em>")          // *accent*
-            .replace(/\s*\/\s*/g, ' <br class="br-soft"> '); // soft (mobile) break
+            .replace(/\s*\/\s*/g, ' <br class="br-soft"> ') // soft (mobile) break — before <em> so the "/" in </em> is untouched
+            .replace(/\*([^*]+)\*/g, "<em>$1</em>");        // *accent*
           return `<span class="hl-line">${inner}</span>`;
         })
         .join("");
