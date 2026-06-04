@@ -412,6 +412,14 @@ body.menu-open .nav__toggle span::after { transform: translateX(-50%) translateY
   color: transparent;
 }
 
+/* Forced-line-break syntax (see renderHeadlines in main.js):
+   each "|" segment becomes a line; "/" adds a mobile-only break. */
+.hl-line { display: block; }
+.br-soft { display: none; }
+@media (max-width: 719px) {
+  .br-soft { display: inline; }
+}
+
 .hero__sub {
   font-size: clamp(1.05rem, 1.6vw, 1.22rem);
   color: var(--text);

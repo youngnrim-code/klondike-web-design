@@ -133,6 +133,36 @@
     document.body.appendChild(footer);
   }
 
+  /* ---- Headline line-break syntax ----
+     Lets copy be edited freely right in the markup, without writing HTML.
+     Put the copy in a [data-headline] attribute and use:
+        |   → hard line break (breaks on every screen)
+        /   → soft break: new line on mobile, a space on desktop
+        *…* → royal-blue accent (renders as <em>)
+        \n  → same as | (so JSON/CMS "headline":"…\n…" values just work)
+     Example:  data-headline="매장 운영의 모든 것,|*한 곳에서.*"
+     The element's existing text is kept as a no-JS fallback. */
+  function escapeHtml(s) {
+    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+  function renderHeadlines() {
+    document.querySelectorAll("[data-headline]").forEach((el) => {
+      const raw = el.getAttribute("data-headline");
+      if (raw == null) return;
+      const html = raw
+        .replace(/\\n|\n/g, "|") // literal \n (and real newlines) → hard break
+        .split("|")
+        .map((line) => {
+          const inner = escapeHtml(line.trim())
+            .replace(/\*([^*]+)\*/g, "<em>$1</em>")          // *accent*
+            .replace(/\s*\/\s*/g, ' <br class="br-soft"> '); // soft (mobile) break
+          return `<span class="hl-line">${inner}</span>`;
+        })
+        .join("");
+      el.innerHTML = html;
+    });
+  }
+
   /* ---- Scroll reveal ---- */
   function initReveal() {
     const els = document.querySelectorAll("[data-reveal]");
@@ -241,6 +271,7 @@
   document.addEventListener("DOMContentLoaded", () => {
     buildHeader();
     buildFooter();
+    renderHeadlines();
     initReveal();
     initAccordion();
     initForms();
