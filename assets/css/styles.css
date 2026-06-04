@@ -34,9 +34,9 @@
   --text-dark: #131830;
   --text-dark-muted: #555d7a;
 
-  /* Type */
-  --font-sans: "Inter", "Pretendard", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-display: "Sora", "Inter", system-ui, sans-serif;
+  /* Type — Pretendard for premium Korean + Latin */
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Malgun Gothic", "Segoe UI", Roboto, sans-serif;
+  --font-display: "Pretendard Variable", Pretendard, -apple-system, system-ui, "Apple SD Gothic Neo", sans-serif;
 
   /* Spacing & shape */
   --radius-sm: 10px;
@@ -73,6 +73,9 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+  /* Korean: break at word boundaries, not mid-syllable */
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 img,

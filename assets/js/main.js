@@ -10,10 +10,10 @@
 
   /* ---- Navigation model ---- */
   const NAV = [
-    { tag: "What", label: "Solutions", href: "solutions.html" },
-    { tag: "Why", label: "Why Klondike", href: "why.html" },
-    { tag: "Where", label: "Where We Work", href: "where.html" },
-    { tag: "Company", label: "Company", href: "company.html" }
+    { tag: "제품", label: "솔루션", href: "solutions.html" },
+    { tag: "강점", label: "선택 이유", href: "why.html" },
+    { tag: "사례", label: "도입 사례", href: "where.html" },
+    { tag: "회사", label: "회사 소개", href: "company.html" }
   ];
 
   const ICON = {
@@ -48,7 +48,7 @@
           </a>
           <div class="nav__links">${links}</div>
           <div class="nav__actions">
-            <a class="btn btn--gold nav__cta" href="contact.html">Let's Talk</a>
+            <a class="btn btn--gold nav__cta" href="contact.html">상담 신청</a>
             <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
           </div>
         </nav>
@@ -56,7 +56,7 @@
 
     const mobile = document.createElement("div");
     mobile.className = "mobile-nav";
-    mobile.innerHTML = `${mLinks}<a class="btn btn--gold btn--block" href="contact.html">Let's Talk</a>`;
+    mobile.innerHTML = `${mLinks}<a class="btn btn--gold btn--block" href="contact.html">상담 신청</a>`;
 
     document.body.prepend(mobile);
     document.body.prepend(header);
@@ -89,7 +89,7 @@
           <div class="footer__brand">
             <a class="brand" href="index.html">${MARK}<span class="brand__name">KLONDIKE<span>.</span></span></a>
             <div class="brand__tagline">Earnest Payment</div>
-            <p>Official distributor of Beaver Store Lab — the complete store hardware &amp; software lineup, supplied, installed and supported nationwide.</p>
+            <p>비버 매장연구소 공식 총판 — 키오스크부터 결제·운영까지, 매장에 필요한 하드웨어와 소프트웨어를 전국 어디서나 공급·설치·지원합니다.</p>
             <div class="footer__social">
               <a href="#" aria-label="Instagram">${ICON.instagram}</a>
               <a href="#" aria-label="YouTube">${ICON.youtube}</a>
@@ -98,37 +98,37 @@
             </div>
           </div>
           <div class="footer__col">
-            <h5>Solutions</h5>
+            <h5>솔루션</h5>
             <ul>
-              <li><a href="solutions.html">Kiosks &amp; Barrier-Free</a></li>
-              <li><a href="solutions.html">POS &amp; Kitchen (KDS)</a></li>
-              <li><a href="solutions.html">Table &amp; QR Order</a></li>
-              <li><a href="solutions.html">BeaverPay &amp; IoT Access</a></li>
+              <li><a href="solutions.html">키오스크 · 배리어프리</a></li>
+              <li><a href="solutions.html">포스 · 주방(KDS)</a></li>
+              <li><a href="solutions.html">테이블오더 · QR오더</a></li>
+              <li><a href="solutions.html">비버페이 · IoT 출입인증</a></li>
             </ul>
           </div>
           <div class="footer__col">
-            <h5>Company</h5>
+            <h5>회사</h5>
             <ul>
-              <li><a href="company.html">About Klondike</a></li>
-              <li><a href="why.html">Why Klondike</a></li>
-              <li><a href="where.html">Case Studies</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="company.html">회사 소개</a></li>
+              <li><a href="why.html">선택 이유</a></li>
+              <li><a href="where.html">도입 사례</a></li>
+              <li><a href="contact.html">상담·문의</a></li>
             </ul>
           </div>
           <div class="footer__col">
-            <h5>Support</h5>
+            <h5>고객지원</h5>
             <ul>
               <li><a href="mailto:support@klondike.co.kr">support@klondike.co.kr</a></li>
-              <li><a href="contact.html">Request a Demo</a></li>
-              <li><a href="#">Partner Login</a></li>
+              <li><a href="contact.html">무료 상담 신청</a></li>
+              <li><a href="#">파트너 로그인</a></li>
             </ul>
           </div>
         </div>
         <div class="footer__bottom">
           <div class="footer__legal">
-            <span><b>KLONDIKE INC</b> &nbsp;·&nbsp; CEO: Helen Kim &nbsp;·&nbsp; Reg. No. 642-86-02107</span>
-            <span>28-4 Teheran-ro 1-gil, Gangnam-gu, Seoul, Republic of Korea &nbsp;·&nbsp; support@klondike.co.kr</span>
-            <span>Official distributor of Beaver Store Lab (㈜비버웍스). Product names &amp; specifications are property of the manufacturer.</span>
+            <span><b>클론다이크(주) · KLONDIKE INC.</b> &nbsp;·&nbsp; 대표 김혜림 &nbsp;·&nbsp; 사업자등록번호 642-86-02107</span>
+            <span>서울특별시 강남구 테헤란로1길 28-4 &nbsp;·&nbsp; support@klondike.co.kr</span>
+            <span>비버 매장연구소(㈜비버웍스) 공식 총판. 제품명 및 사양은 제조사의 자산입니다.</span>
             <span>© ${new Date().getFullYear()} KLONDIKE INC. All rights reserved.</span>
           </div>
           <a class="btn btn--outline-light" href="#top">Back to top ↑</a>

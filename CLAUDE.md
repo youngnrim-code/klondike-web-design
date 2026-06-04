@@ -4,9 +4,15 @@ Marketing website for **KLONDIKE INC** (legal entity, CEO Helen Kim / 김혜림,
 
 Brand tagline: **Earnest Payment**.
 
+## Market & language
+- **Korean-language site. Korea-only market** — products are **not sold internationally yet**. Do not imply global/overseas sales. "전국"(nationwide, within Korea) is accurate; "global" sales is not.
+- **Audience:** Korean small-business owners (사장님) — café/restaurant/retail. Write natural, professional Korean (존댓말), not translated-sounding English.
+- The whole site (copy, nav, forms, FAQ, footer, meta) is in Korean. Keep proper nouns/product brands as commonly written in Korean (비버 키오스크, 오더퀸, 비버페이, KDS, etc.).
+
 ## Tech
 - Static **HTML/CSS/vanilla JS**, no build step. Served by **GitHub Pages** from repo root.
 - Shared header/footer/nav injected by `assets/js/main.js`. Design tokens + components in `assets/css/styles.css`.
+- **Typography: Pretendard** (variable, via jsDelivr CDN) for premium Korean + Latin. `--font-sans`/`--font-display` both Pretendard.
 - **All paths must stay relative** (`assets/...`, `page.html`) — the site may run under a subpath.
 - Custom domain `klondike.co.kr` via `CNAME`. Deploy workflow strips `.git/.github/.claude` from the published artifact.
 
@@ -17,8 +23,8 @@ Brand tagline: **Earnest Payment**.
 - Type: **Sora** (display) + **Inter** (body). Keep navy + royal-blue; do not reintroduce gold.
 
 ## Design direction (apply to every change)
-Make design, copy, fonts, imagery, and add-ons **trendy, global, audience-targeted, inclusive/raceless, and purchase-friendly**:
-- **Trendy & global:** modern, clean, conversion-oriented layouts; international visual language, not locale-specific clichés.
+Make design, copy, fonts, imagery, and add-ons **world-class, modern, audience-targeted, inclusive/raceless, and purchase-friendly**:
+- **World-class & modern:** premium, clean, conversion-oriented layouts at a global quality bar — even though copy is Korean and the market is Korea-only.
 - **Inclusive / raceless:** imagery and language avoid race/ethnic targeting; broadly relatable; products and use-cases over people where possible.
 - **Purchase-friendly:** clear value props, scannable benefits, obvious CTAs, friction-free paths to "request a quote / consultation," social proof, transparent pricing framing.
 - **Typography & hierarchy:** strong hierarchy, generous spacing, readable line lengths, accessible contrast (WCAG AA+).
