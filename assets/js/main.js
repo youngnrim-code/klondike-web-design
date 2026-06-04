@@ -5,17 +5,8 @@
 (function () {
   "use strict";
 
-  /* ---- Brand mark (gold "K" monogram) ---- */
-  const MARK = `
-    <svg class="brand__mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-      <rect width="40" height="40" rx="11" fill="url(#kg)"/>
-      <path d="M13 9h4.4v9.1L25.6 9h5.3l-8.6 9.4L31.4 31h-5.4l-6.3-9-2.3 2.5V31H13V9Z" fill="#fff"/>
-      <defs>
-        <linearGradient id="kg" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#2a347e"/><stop offset="1" stop-color="#161a47"/>
-        </linearGradient>
-      </defs>
-    </svg>`;
+  /* ---- Brand mark (real KLONDIKE "K", white for dark surfaces) ---- */
+  const MARK = `<img class="brand__mark" src="assets/img/logo-mark-white.png" alt="KLONDIKE" width="34" height="34" />`;
 
   /* ---- Navigation model ---- */
   const NAV = [
