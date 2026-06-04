@@ -42,7 +42,7 @@
     header.className = "site-header";
     header.innerHTML = `
       <div class="container">
-        <nav class="nav" aria-label="Primary">
+        <nav class="nav" aria-label="주요 메뉴">
           <a class="brand" href="index.html" aria-label="KLONDIKE INC home">
             ${MARK}<span class="brand__name">KLONDIKE<span>.</span></span>
           </a>
@@ -131,7 +131,7 @@
             <span>비버 매장연구소(㈜비버웍스) 공식 총판. 제품명 및 사양은 제조사의 자산입니다.</span>
             <span>© ${new Date().getFullYear()} KLONDIKE INC. All rights reserved.</span>
           </div>
-          <a class="btn btn--outline-light" href="#top">Back to top ↑</a>
+          <a class="btn btn--outline-light" href="#top">맨 위로 ↑</a>
         </div>
       </div>`;
     document.body.appendChild(footer);
