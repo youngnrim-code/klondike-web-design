@@ -1007,6 +1007,15 @@ body.menu-open .mobile-nav { opacity: 1; visibility: visible; transform: transla
   text-transform: uppercase;
   font-weight: 600;
 }
+.media-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: var(--paper-2);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
 .card--product { display: flex; flex-direction: column; }
 .card--product p { flex: 1; }
 .card__model {
