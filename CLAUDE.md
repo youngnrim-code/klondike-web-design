@@ -43,5 +43,8 @@ Under `.claude/skills/` (from `nextlevelbuilder/ui-ux-pro-max-skill`):
 `ui-ux-pro-max` (styles, palettes, font pairings, UX guidelines), `design`, `design-system`, `brand`, `ui-styling`, `banner-design`, `slides`.
 Invoke the relevant skill when planning, building, reviewing, or improving UI/UX, typography, color, banners, or brand assets.
 
+## Working style — parallel by default
+When a request contains multiple **independent** tasks (e.g. different pages/files, or UI vs. copy vs. QA), fan them out to **parallel specialized sub-agents** in a single session (`web-ui-designer`, `creative-director`, `conversion-copywriter`, `design-qa-reviewer`, etc.) and consolidate the results into **one coherent branch/PR**. Run tasks **serially only** when they depend on each other or edit the **same files** (to avoid merge conflicts). Prefer one batched message that dispatches several agents at once over doing the work sequentially.
+
 ## Catalog facts
 Real product photos in `assets/img/products/`. Prices are Beaver customer sale prices (VAT excl.), most with 36-month installment. 1-year free A/S, nationwide installation, 365-day support. Beaver product names (BeaverKiosk, BeaverPay, OrderQueen, etc.) are the manufacturer's trademarks.
