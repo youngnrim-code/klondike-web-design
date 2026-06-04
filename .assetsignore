@@ -1,0 +1,10 @@
+# Internal / non-web files — do not publish as static assets
+.git
+.github
+.claude
+CLAUDE.md
+README.md
+.gitignore
+wrangler.jsonc
+wrangler.toml
+node_modules
