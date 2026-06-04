@@ -31,6 +31,9 @@ jobs:
           # Auto-enable GitHub Pages on first run (no manual settings toggle needed)
           enablement: true
 
+      - name: Prepare site (strip non-published files)
+        run: rm -rf .git .github .claude
+
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
         with:
