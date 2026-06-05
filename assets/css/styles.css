@@ -1133,6 +1133,12 @@ body.menu-open .mobile-nav { opacity: 1; visibility: visible; transform: transla
   from { opacity: 0; transform: translate(28px, 12px); }
   to   { opacity: 1; transform: none; }
 }
+/* Mobile-only: the whole device cluster starts pulled-forward (large),
+   then eases back to its resting size */
+@keyframes heroRecede {
+  0%   { transform: scale(1.32); }
+  100% { transform: scale(1); }
+}
 
 /* Hero copy: staggered entrance on load (framer-motion-style) */
 .hero__copy > * { opacity: 0; animation: heroRise 0.7s var(--ease) forwards; }
@@ -1148,7 +1154,7 @@ body.menu-open .mobile-nav { opacity: 1; visibility: visible; transform: transla
 
 /* Accessibility: no motion → everything visible, no animation */
 @media (prefers-reduced-motion: reduce) {
-  .hero__copy > *, .hero-shot, .hero__glow {
+  .hero__copy > *, .hero-shot, .hero__glow, .hero__visual {
     opacity: 1 !important;
     transform: none !important;
     animation: none !important;
@@ -1243,7 +1249,13 @@ body.menu-open .mobile-nav { opacity: 1; visibility: visible; transform: transla
   .nav__links, .nav__cta { display: none; }
   .nav__toggle { display: block; }
   .hero__inner { grid-template-columns: 1fr; }
-  .hero__visual { display: none; }
+  /* Keep the device animation on mobile, but play it as a cinematic
+     "appear large up front, then slowly recede into place" intro */
+  .hero__visual {
+    margin-top: 40px;
+    transform-origin: center 38%;
+    animation: heroRecede 2.6s var(--ease) 0.15s both;
+  }
   .split { grid-template-columns: 1fr; }
   .split--reverse .split__media { order: 0; }
   .grid--3, .grid--2, .grid--4 { grid-template-columns: 1fr; }
