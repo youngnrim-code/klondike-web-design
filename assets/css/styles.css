@@ -1250,11 +1250,16 @@ body.menu-open .mobile-nav { opacity: 1; visibility: visible; transform: transla
   .nav__toggle { display: block; }
   .hero__inner { grid-template-columns: 1fr; }
   /* Keep the device animation on mobile, but play it as a cinematic
-     "appear large up front, then slowly recede into place" intro */
+     "appear large up front, then slowly recede into place" intro.
+     On mobile the visual sits below the fold, so the recede is gated
+     behind .is-played (added by JS when it scrolls into view) instead
+     of firing on load where the user would never see it. */
   .hero__visual {
     margin-top: 40px;
     transform-origin: center 38%;
-    animation: heroRecede 2.6s var(--ease) 0.15s both;
+  }
+  .hero__visual.is-played {
+    animation: heroRecede 2.6s var(--ease) both;
   }
   .split { grid-template-columns: 1fr; }
   .split--reverse .split__media { order: 0; }
