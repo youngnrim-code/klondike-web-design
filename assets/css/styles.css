@@ -1267,6 +1267,13 @@ body.menu-open .mobile-nav { opacity: 1; visibility: visible; transform: transla
   .nav__links, .nav__cta { display: none; }
   .nav__toggle { display: block; }
   .hero__inner { grid-template-columns: 1fr; }
+  /* On the tall, single-column mobile hero, spread the flow-field evenly
+     over the full height so the top (copy) and bottom (device) read as one
+     continuous canvas, fading softly only at the outer edges. */
+  .hero__flow {
+    -webkit-mask-image: radial-gradient(125% 100% at 50% 50%, #000 38%, transparent 90%);
+    mask-image: radial-gradient(125% 100% at 50% 50%, #000 38%, transparent 90%);
+  }
   /* Keep the device animation on mobile, but play it as a cinematic
      "appear large up front, then slowly recede into place" intro.
      On mobile the visual sits below the fold, so the recede is gated
