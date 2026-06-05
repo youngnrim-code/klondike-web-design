@@ -210,6 +210,151 @@
     io.observe(visual);
   }
 
+  /* ---- Hero flow-field background ----
+     Vanilla-JS port of a particle flow-field, recoloured to the KLONDIKE
+     navy + royal-blue palette. Particles drift along a flow field, are
+     repelled by the cursor, and leave fading trails. The canvas is kept
+     transparent (destination-out fade) so the navy gradient shows through.
+     Skipped entirely when the user prefers reduced motion. */
+  function initHeroFlow() {
+    const canvas = document.querySelector(".hero__flow");
+    if (!canvas) return;
+    const hero = canvas.closest(".hero");
+    const ctx = canvas.getContext("2d", { alpha: true });
+    if (!hero || !ctx) return;
+
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (reduce.matches) return; // honour accessibility preference
+
+    // Royal-blue palette drawn from the brand tokens (lighter tones pop on navy)
+    const COLORS = ["#3a57d6", "#5d78f0", "#8aa0ff"];
+    const SPEED = 0.8;
+    const TRAIL = 0.06; // lower = longer trails
+
+    let width = 0;
+    let height = 0;
+    let dpr = 1;
+    let particles = [];
+    let rafId = 0;
+    let running = false;
+    const mouse = { x: -9999, y: -9999 };
+
+    function makeParticle(p) {
+      p = p || {};
+      p.x = Math.random() * width;
+      p.y = Math.random() * height;
+      p.vx = 0;
+      p.vy = 0;
+      p.age = 0;
+      p.life = Math.random() * 200 + 100;
+      p.color = COLORS[(Math.random() * COLORS.length) | 0];
+      return p;
+    }
+
+    function seed() {
+      // Lighter particle load on small screens for smooth mobile performance
+      const count = width < 760 ? 220 : 520;
+      particles = [];
+      for (let i = 0; i < count; i++) particles.push(makeParticle());
+    }
+
+    function resize() {
+      width = hero.clientWidth;
+      height = hero.clientHeight;
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      canvas.style.width = width + "px";
+      canvas.style.height = height + "px";
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      seed();
+    }
+
+    function step() {
+      // Fade previous frame to transparent (trails) instead of painting a colour,
+      // so the underlying navy gradient and grid remain visible.
+      ctx.globalCompositeOperation = "destination-out";
+      ctx.fillStyle = "rgba(0,0,0," + TRAIL + ")";
+      ctx.fillRect(0, 0, width, height);
+      ctx.globalCompositeOperation = "source-over";
+
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        const angle = (Math.cos(p.x * 0.005) + Math.sin(p.y * 0.005)) * Math.PI;
+        p.vx += Math.cos(angle) * 0.2 * SPEED;
+        p.vy += Math.sin(angle) * 0.2 * SPEED;
+
+        const dx = mouse.x - p.x;
+        const dy = mouse.y - p.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const radius = 150;
+        if (dist < radius) {
+          const force = (radius - dist) / radius;
+          p.vx -= dx * force * 0.05;
+          p.vy -= dy * force * 0.05;
+        }
+
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vx *= 0.95;
+        p.vy *= 0.95;
+
+        if (++p.age > p.life) makeParticle(p);
+        if (p.x < 0) p.x = width;
+        else if (p.x > width) p.x = 0;
+        if (p.y < 0) p.y = height;
+        else if (p.y > height) p.y = 0;
+
+        const alpha = 1 - Math.abs(p.age / p.life - 0.5) * 2;
+        ctx.globalAlpha = alpha;
+        ctx.fillStyle = p.color;
+        ctx.fillRect(p.x, p.y, 1.6, 1.6);
+      }
+      ctx.globalAlpha = 1;
+      rafId = requestAnimationFrame(step);
+    }
+
+    function start() {
+      if (running) return;
+      running = true;
+      rafId = requestAnimationFrame(step);
+    }
+    function stop() {
+      running = false;
+      cancelAnimationFrame(rafId);
+    }
+
+    resize();
+    canvas.classList.add("is-on");
+    start();
+
+    // Pause when the hero scrolls out of view to save CPU/battery
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => (e.isIntersecting ? start() : stop()));
+        },
+        { threshold: 0 }
+      );
+      io.observe(hero);
+    }
+
+    let resizeT;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeT);
+      resizeT = setTimeout(resize, 200);
+    });
+    hero.addEventListener("mousemove", (e) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+    });
+    hero.addEventListener("mouseleave", () => {
+      mouse.x = -9999;
+      mouse.y = -9999;
+    });
+  }
+
   /* ---- Accordion ---- */
   function initAccordion() {
     document.querySelectorAll(".acc__q").forEach((q) => {
@@ -300,6 +445,7 @@
     renderHeadlines();
     initReveal();
     initHeroIntro();
+    initHeroFlow();
     initAccordion();
     initForms();
     initCounters();
