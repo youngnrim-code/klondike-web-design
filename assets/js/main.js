@@ -184,6 +184,32 @@
     els.forEach((el) => io.observe(el));
   }
 
+  /* ---- Hero device intro (mobile) ----
+     The hero visual sits below the fold on mobile, so its "recede" intro
+     is triggered when it scrolls into view rather than on page load. The
+     CSS animation is gated behind the .is-played class (mobile media query
+     only), so adding the class on larger screens is a harmless no-op. */
+  function initHeroIntro() {
+    const visual = document.querySelector(".hero__visual");
+    if (!visual) return;
+    if (!("IntersectionObserver" in window)) {
+      visual.classList.add("is-played");
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("is-played");
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+    io.observe(visual);
+  }
+
   /* ---- Accordion ---- */
   function initAccordion() {
     document.querySelectorAll(".acc__q").forEach((q) => {
@@ -273,6 +299,7 @@
     buildFooter();
     renderHeadlines();
     initReveal();
+    initHeroIntro();
     initAccordion();
     initForms();
     initCounters();
