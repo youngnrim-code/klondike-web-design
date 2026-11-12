@@ -117,6 +117,7 @@
             <ul>
               <li><a href="mailto:support@klondike.co.kr">support@klondike.co.kr</a></li>
               <li><a href="contact.html">무료 상담 신청</a></li>
+              <li><a href="privacy.html"><b>개인정보처리방침</b></a></li>
             </ul>
           </div>
         </div>

@@ -6,4 +6,6 @@
   <url><loc>https://klondike.co.kr/where.html</loc><priority>0.7</priority></url>
   <url><loc>https://klondike.co.kr/company.html</loc><priority>0.6</priority></url>
   <url><loc>https://klondike.co.kr/contact.html</loc><priority>0.8</priority></url>
+  <url><loc>https://klondike.co.kr/privacy.html</loc><priority>0.3</priority></url>
+  <url><loc>https://klondike.co.kr/mail-app.html</loc><priority>0.2</priority></url>
 </urlset>

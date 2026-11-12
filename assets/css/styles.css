@@ -1299,3 +1299,15 @@ body.menu-open .mobile-nav { opacity: 1; visibility: visible; transform: transla
   .footer__top { grid-template-columns: 1fr; }
   .footer__bottom { flex-direction: column; align-items: flex-start; }
 }
+
+/* ---- Legal documents (privacy policy, app notice) ---- */
+.legal-doc { max-width: 820px; }
+.legal-doc h2 { font-size: 1.25rem; margin: 2.2em 0 .6em; color: #161a47; font-weight: 700; }
+.legal-doc a { color: #3a57d6; text-decoration: underline; }
+.legal-doc p, .legal-doc li { line-height: 1.85; }
+.legal-doc ul { padding-left: 1.3em; margin: .4em 0 1em; list-style: disc; }
+.legal-doc li { list-style: disc; }
+.legal-doc hr { margin: 2.4em 0; border: 0; border-top: 1px solid rgba(22,26,71,.12); }
+.legal-table { width: 100%; border-collapse: collapse; font-size: .92rem; margin: .8em 0 1.2em; display: block; overflow-x: auto; }
+.legal-table th, .legal-table td { border: 1px solid rgba(22,26,71,.15); padding: 10px 12px; text-align: left; vertical-align: top; }
+.legal-table th { background: #eef0f8; color: #161a47; font-weight: 600; white-space: nowrap; }
